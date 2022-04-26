@@ -160,27 +160,38 @@
           *Данный расчет является предварительным. Точную стоимость уточняйте у
           менеджеров. Минимальная стоимость договора 8900 руб.
         </div>
-        <div class="calculator-3-step-phone">
-          <div class="calculator-3-step-phone-text">Ваш номер телефона</div>
-          <VuePhoneNumberInput default-country-code="RU" v-model="phone">
-          </VuePhoneNumberInput>
-        </div>
-        <div class="calculator-3-step-btn">
-          <div class="calculator-3-step-btn-text">ОСТАВИТЬ ЗАЯВКУ</div>
-        </div>
+        <form ref="form" @submit.prevent="sendEmail">
+          <div class="calculator-3-step-phone">
+            <div class="calculator-3-step-phone-text">Ваш номер телефона</div>
+            <VuePhoneNumberInput default-country-code="RU" v-model="phone">
+            </VuePhoneNumberInput>
+          </div>
+          <button
+            type="submit"
+            class="calculator-3-step-btn"
+            v-on:click="CallModalShow"
+          >
+            <div class="calculator-3-step-btn-text">ОСТАВИТЬ ЗАЯВКУ</div>
+          </button>
+        </form>
         <div class="calculator-3-step-info">
           *Данный расчет является предварительным. Точную стоимость уточняйте у
           менеджеров. Минимальная стоимость договора 8900 руб.
         </div>
       </div>
     </div>
+    <div class="callSuccessModalShow" v-if="isShow">
+      <SuccessModal :phone="phone" :isShow="isShow" @hideModal="hideModal">
+      </SuccessModal>
+    </div>
   </main>
 </template>
 
 <script>
 import VueSlider from "vue-slider-component";
+import emailjs from "emailjs-com";
 import "vue-slider-component/theme/antd.css";
-
+import SuccessModal from "@/components/SuccessModal.vue";
 import VuePhoneNumberInput from "vue-phone-number-input";
 import "vue-phone-number-input/dist/vue-phone-number-input.css";
 export default {
@@ -188,9 +199,11 @@ export default {
   components: {
     VueSlider,
     VuePhoneNumberInput,
+    SuccessModal,
   },
   data() {
     return {
+      isShow: false,
       value: 1,
       price: 299,
       mobilePrice: 199,
@@ -204,6 +217,26 @@ export default {
     };
   },
   methods: {
+    sendEmail() {
+        document.getElementsByClassName('input-tel__input')[0].name = "message"
+        emailjs.sendForm(
+          "service_p8m20xr",
+          "template_ghqcdx5",
+          this.$refs.form,
+          "MXeizNJv0hfdlvjve"
+        ).then((result) => {
+            console.log('SUCCESS!', result.text);
+        }, (error) => {
+            console.log('FAILED...', error.text);
+        });
+        this.phone = ""
+    },
+    CallModalShow() {
+      this.isShow = !this.isShow;
+    },
+    hideModal(data) {
+      this.isShow = data;
+    },
     addFirstCheckPrice() {
       const firstCheckPrice = 450;
       this.isFristCheck = !this.isFristCheck;
@@ -356,7 +389,8 @@ export default {
   transition: all 0.2s ease-in;
 }
 
-.calculator-2-step-photos-name,.calculator-2-step-photos-balcon-name {
+.calculator-2-step-photos-name,
+.calculator-2-step-photos-balcon-name {
   line-height: 1.1;
   font-family: "Open Sans", Arial, sans-serif;
   font-weight: 300;
@@ -530,6 +564,7 @@ export default {
   background-color: #198c5e;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
     border-color 0.2s ease-in-out;
+  cursor: pointer;
 }
 .calculator-3-step-info {
   margin-top: 4%;
@@ -581,11 +616,13 @@ export default {
 .calculator-3-step-mobile-info {
   display: none;
 }
-.calculator-mobile-2-step-photos-4,.calculator-2-step-mobile-photos-name {
+.calculator-mobile-2-step-photos-4,
+.calculator-2-step-mobile-photos-name {
   display: none;
 }
 @media screen and (max-width: 980px) {
-  .calculator-3-step-price-text-price,.calculator-2-step-photos-balcon-name {
+  .calculator-3-step-price-text-price,
+  .calculator-2-step-photos-balcon-name {
     display: none;
   }
   .calculator-3-step-mobile-price-text-price {
@@ -595,7 +632,7 @@ export default {
   .calculator-2-step-mobile-photos-name {
     display: block;
   }
-  
+
   .calculator-1-step-range {
     padding-left: 2%;
   }
