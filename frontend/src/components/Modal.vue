@@ -123,10 +123,7 @@ export default {
 .modaltor__content {
   width: 100%;
   height: 100%;
-  /* max-width: 460px;
-  width: 460px;
-  height: 500px;
-  max-height: 500px; */
+  overflow: hidden;
 }
 
 .call-modal-content {

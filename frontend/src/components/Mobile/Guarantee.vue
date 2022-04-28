@@ -17,24 +17,28 @@
         </div>
       </div>
     </div>
-    <div class="mobile-guarantee-btn">
-      <a class="mobile-guarantee-btn-text" href="tel:+78352355047"
-        >Позвонить 8 (8352) 35-50-47
-        <svg
-          class="mobile-guarantee-arrow"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-        >
-          <g class="nc-icon-wrapper" fill="#ffffff">
-            <polygon
-              fill="#ffffff"
-              points="9.3,1.3 7.9,2.7 12.2,7 0,7 0,9 12.2,9 7.9,13.3 9.3,14.7 16,8 "
-            ></polygon>
-          </g>
-        </svg>
-      </a>
+    <a href="tel:+78352355045" style="text-decoration: none">
+      <div class="mobile-guarantee-btn">
+        <a class="mobile-guarantee-btn-text" href="tel:+78352355045"
+          >Позвонить 8 (8352) 35-50-45
+          <svg
+            class="mobile-guarantee-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <g class="nc-icon-wrapper" fill="#ffffff">
+              <polygon
+                fill="#ffffff"
+                points="9.3,1.3 7.9,2.7 12.2,7 0,7 0,9 12.2,9 7.9,13.3 9.3,14.7 16,8 "
+              ></polygon>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </a>
+    <div class="callModalShow" v-if="isShow">
+      <Modal :isShow="isShow" @hideModal="hideModal"> </Modal>
     </div>
-    <div class="callModalShow" v-if="isShow"><Modal :isShow="isShow" @hideModal="hideModal"> </Modal></div>
   </main>
 </template>
 
@@ -48,14 +52,14 @@ export default {
   data() {
     return {
       isShow: false,
-    }
+    };
   },
   methods: {
     CallModalShow() {
       this.isShow = !this.isShow;
     },
     hideModal(data) {
-      this.isShow = data
+      this.isShow = data;
     },
   },
 };

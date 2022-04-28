@@ -19,9 +19,10 @@
         <strong class="big-modal-strong">MSD не содержит мела и фтолата. Безопасен для аллергиков.</strong>
       </div>
     </div>
+    <a  href="tel:+78352355045" style="text-decoration:none; width:100%">
     <div class="mobile-guarantee-btn">
-      <a class="mobile-guarantee-btn-text" href="tel:+78352355047"
-        >Позвонить 8 (8352) 35-50-47
+      <a class="mobile-guarantee-btn-text"
+        >Позвонить 8 (8352) 35-50-45
         <svg
           class="mobile-guarantee-arrow"
           xmlns="http://www.w3.org/2000/svg"
@@ -36,6 +37,7 @@
         </svg>
       </a>
     </div>
+    </a>
 
     <div class="msd-title">
       <h3 class="msd-title-text">МАКСИМАЛЬНО СЖАТЫЕ СРОКИ</h3>
@@ -58,7 +60,7 @@
         <strong class="big-modal-strong">Все расчеты и подписания документов можно произвести непосредственно на месте с нашими специалистами</strong>
       </div>
     </div>
-    <div class="lamp-mobile-btn">
+    <div class="lamp-mobile-btn" v-on:click="CallModalShow">
       <a class="lamp-mobile-btn-text"
         >Оставть заявку
         <svg

@@ -26,7 +26,7 @@
     </div>
 
     <div class="montage-legos-price-list-block">
-      <div class="montage-legos-product-1">
+      <div class="montage-legos-product-1" >
         <div class="montage-legos-product-1-img" v-on:click="CallModalShow">
           <img
             class="montage-legos-product-img"
@@ -41,8 +41,8 @@
           <div class="montage-legos-product-1-btn-text">Провода</div>
         </div>
       </div>
-      <div class="montage-legos-product-2" v-on:click="CallModalShow">
-        <div class="montage-legos-product-2-img">
+      <div class="montage-legos-product-2" >
+        <div class="montage-legos-product-2-img" v-on:click="CallModalShow">
           <img
             class="montage-legos-product-img"
             src="@/assets/PriceList/img-2.webp"
@@ -56,8 +56,8 @@
           <div class="montage-legos-product-2-btn-text">КЛЕММЫ</div>
         </div>
       </div>
-      <div class="montage-legos-product-3" v-on:click="CallModalShow">
-        <div class="montage-legos-product-3-img">
+      <div class="montage-legos-product-3" >
+        <div class="montage-legos-product-3-img" v-on:click="CallModalShow">
           <img
             class="montage-legos-product-img"
             src="@/assets/PriceList/img-3.webp"
@@ -73,8 +73,8 @@
           </div>
         </div>
       </div>
-      <div class="montage-legos-product-4" v-on:click="CallModalShow">
-        <div class="montage-legos-product-4-img">
+      <div class="montage-legos-product-4" >
+        <div class="montage-legos-product-4-img" v-on:click="CallModalShow">
           <img
             class="montage-legos-product-img"
             src="@/assets/PriceList/img-4.webp"

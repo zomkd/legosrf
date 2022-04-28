@@ -8,7 +8,12 @@
             <span class="road-arrow">→</span>
           </li>
           <li class="window-balcony">
-            <a class="step-name"  href="https://oknacheb.ru/?roistat_visit=121911"> ОКНА И БАЛКОНЫ переход... </a>
+            <a
+              class="step-name"
+              href="https://oknacheb.ru/?roistat_visit=121911"
+            >
+              ОКНА И БАЛКОНЫ переход...
+            </a>
           </li>
         </ul>
       </section>
@@ -16,10 +21,10 @@
     <section class="green-line">
       <section class="location">
         <div class="city">
-            <img
-              class="green-line-icon"
-              src="@/assets/Navbar/green-line/flag.svg"
-              alt="Flag"
+          <img
+            class="green-line-icon"
+            src="@/assets/Navbar/green-line/flag.svg"
+            alt="Flag"
           />
           <div class="city-name">Чебоксары</div>
         </div>
@@ -56,21 +61,23 @@
           <div class="contacts-name">Контакты</div>
         </div>
       </section>
-      <section class="mobile-nav"> 
+      <section class="mobile-nav">
         <div class="mobile-logo">
-          <img
+          <a href="https://zomkd.github.io/legosrf/">
+            <img
               class="mobile-logo-icon"
               src="@/assets/Navbar/green-line/1.png"
               alt="Flag"
-          />
-          </div>
-          <a class="mobile-call" href="tel:+78352355047">
-            <img
-              class="mobile-call-icon"
-              src="@/assets/Navbar/green-line/2.webp"
-              alt="Flag"
-          />
+            />
           </a>
+        </div>
+        <a class="mobile-call" href="tel:+78352355045">
+          <img
+            class="mobile-call-icon"
+            src="@/assets/Navbar/green-line/2.webp"
+            alt="Flag"
+          />
+        </a>
       </section>
     </section>
   </nav>
@@ -186,11 +193,12 @@ span {
   flex-direction: row;
   align-items: center;
   width: 100%;
-
 }
 
 /* mobile  */
-.mobile-nav, .mobile-logo, .mobile-call {
+.mobile-nav,
+.mobile-logo,
+.mobile-call {
   display: none;
 }
 
@@ -206,7 +214,8 @@ span {
   li {
     font-size: 14px;
   }
-  .location, .services {
+  .location,
+  .services {
     display: none;
   }
   .mobile-nav {
@@ -216,13 +225,14 @@ span {
     flex-direction: row;
     height: 100%;
   }
-  .mobile-logo, .mobile-call  {
+  .mobile-logo,
+  .mobile-call {
     display: block;
+    cursor: pointer;
   }
   .mobile-logo {
-    display:block;
+    display: block;
     max-width: 306px;
-    
   }
   .mobile-logo-icon {
     width: 80%;
@@ -230,6 +240,5 @@ span {
   .mobile-call-icon {
     width: 40px;
   }
-
 }
 </style>

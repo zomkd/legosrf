@@ -94,12 +94,16 @@ export default {
   created() {
     this.open = this.isShow;
     const body = document.querySelector("body");
+    const lampPanel = document.getElementsByClassName(".lamp-panel-wrapper")
     body.style.overflow = "hidden";
+    lampPanel.style.display = "none";
   },
   methods: {
     hideModal() {
       this.open != this.open;
       const body = document.querySelector("body");
+      const lampPanel = document.getElementsByClassName(".lamp-panel-wrapper")
+      lampPanel.style.display = "flex";
       body.style.overflow = "auto";
       this.$emit("hideModal", false);
     },

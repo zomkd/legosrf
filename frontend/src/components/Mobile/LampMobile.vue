@@ -24,26 +24,32 @@
       <img
         class="lamp-mobile-img"
         src="@/assets/Mobile/LampMobile/1.webp"
-        alt=""
+        alt="image-1"
       />
     </div>
-    <div class="lamp-mobile-btn">
-      <a class="lamp-mobile-btn-text" href="https://легос.рф/svet_catalog?roistat_visit=124493"
-        >Светильники
-        <svg
-          class="lamp-mobile-arrow"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-        >
-          <g class="nc-icon-wrapper" fill="#ffffff">
-            <polygon
-              fill="#ffffff"
-              points="9.3,1.3 7.9,2.7 12.2,7 0,7 0,9 12.2,9 7.9,13.3 9.3,14.7 16,8 "
-            ></polygon>
-          </g>
-        </svg>
-      </a>
-    </div>
+
+    <a
+      href="https://легос.рф/svet_catalog?roistat_visit=124493"
+      style="width: 100%; text-decoration: none"
+    >
+      <div class="lamp-mobile-btn">
+        <a class="lamp-mobile-btn-text"
+          >Светильники
+          <svg
+            class="lamp-mobile-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <g class="nc-icon-wrapper" fill="#ffffff">
+              <polygon
+                fill="#ffffff"
+                points="9.3,1.3 7.9,2.7 12.2,7 0,7 0,9 12.2,9 7.9,13.3 9.3,14.7 16,8 "
+              ></polygon>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </a>
 
     <div class="lamp-mobile-title">
       <h1 class="lamp-mobile-title-text" field="title" style="">
@@ -68,27 +74,31 @@
       <img
         class="lamp-mobile-img"
         src="@/assets/Mobile/LampMobile/2.webp"
-        alt=""
+        alt="image-2"
       />
     </div>
-    <div class="lamp-mobile-btn">
-      <a class="lamp-mobile-btn-text" href="https://www.легос.рф/catalog1?roistat_visit=124493"
-        >Каталог идей освещения
-        <svg
-          class="lamp-mobile-arrow"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 16 16"
-        >
-          <g class="nc-icon-wrapper" fill="#ffffff">
-            <polygon
-              fill="#ffffff"
-              points="9.3,1.3 7.9,2.7 12.2,7 0,7 0,9 12.2,9 7.9,13.3 9.3,14.7 16,8 "
-            ></polygon>
-          </g>
-        </svg>
-      </a>
+    <a href="https://www.легос.рф/catalog1?roistat_visit=124493" style="width: 100%; text-decoration: none">
+      <div class="lamp-mobile-btn">
+        <a class="lamp-mobile-btn-text"
+          >Каталог идей освещения
+          <svg
+            class="lamp-mobile-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+          >
+            <g class="nc-icon-wrapper" fill="#ffffff">
+              <polygon
+                fill="#ffffff"
+                points="9.3,1.3 7.9,2.7 12.2,7 0,7 0,9 12.2,9 7.9,13.3 9.3,14.7 16,8 "
+              ></polygon>
+            </g>
+          </svg>
+        </a>
+      </div>
+    </a>
+    <div class="callModalShow" v-if="isShow">
+      <Modal :isShow="isShow" @hideModal="hideModal"> </Modal>
     </div>
-<div class="callModalShow" v-if="isShow"><Modal :isShow="isShow" @hideModal="hideModal"> </Modal></div>
     <div class="lamp-mobile-title">
       <h1 class="lamp-mobile-title-text" field="title" style="">
         КАК ПРАВИЛЬНО РАССТАВИТЬ СВЕТИЛЬНИКИ? СОВЕТЫ ПО РАЗМЕЩЕНИЮ
@@ -96,8 +106,8 @@
       </h1>
     </div>
     <div class="lamp-mobile-content">
-      Избегайте одного источника света
-      Исключите слепящий эффект и прямой зрительный контакт со светильниками...
+      Избегайте одного источника света Исключите слепящий эффект и прямой
+      зрительный контакт со светильниками...
     </div>
     <section class="mobile-lamp-video">
       <div class="lamp-video">
@@ -115,8 +125,7 @@
       функциональный свет, для освещения зон, в которых мы готовим, работаем ,
       читаем или ужинаем.
     </div>
-
-    <div class="lamp-mobile-btn">
+    <div class="lamp-mobile-btn" v-on:click="CallModalShow">
       <a class="lamp-mobile-btn-text"
         >Оставить заявку
         <svg
@@ -133,7 +142,7 @@
         </svg>
       </a>
     </div>
-     
+    
   </main>
 </template>
 
@@ -141,20 +150,20 @@
 import Modal from "@/components/Modal.vue";
 export default {
   name: "LampMobile",
-    components: {
+  components: {
     Modal,
   },
   data() {
     return {
       isShow: false,
-    }
+    };
   },
   methods: {
     CallModalShow() {
       this.isShow = !this.isShow;
     },
     hideModal(data) {
-      this.isShow = data
+      this.isShow = data;
     },
   },
 };
@@ -182,13 +191,13 @@ export default {
     margin-left: 3%;
     margin-right: 3%;
     display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-max-width: 615px;
-margin-left: 3%;
-margin-right: 3%;
-margin-top: 2%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 615px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 2%;
   }
 
   .lamp-mobile-photo {
@@ -204,7 +213,7 @@ margin-top: 2%;
   }
   .lamp-mobile-content {
     margin-bottom: 3%;
-        line-height: 1.55;
+    line-height: 1.55;
     margin-top: 2%;
   }
   .lamp-mobile-btn {
@@ -227,7 +236,7 @@ margin-top: 2%;
     margin-bottom: 7%;
   }
   .lamp-mobile-btn::after {
-     content: "";
+    content: "";
     position: absolute;
     height: 350%;
     width: 200%;
@@ -273,7 +282,6 @@ margin-top: 2%;
     /* justify-content: center; */
   }
   .lamp-video {
-    
     max-height: 800px;
     /* width: 100%; */
     margin-bottom: 1%;

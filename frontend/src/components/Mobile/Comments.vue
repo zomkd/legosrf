@@ -59,7 +59,7 @@ export default {
   }
   .comments-photo {
           max-height: 200px;
-    min-height: 180px;
+    min-height: 140px;
     position: relative;
     margin-bottom: 5%;
   }

@@ -1,12 +1,12 @@
 <template>
   <main class="map">
     <div class="map-mobile-block">
-      <div class="map-mobile-btn">
-        <div class="map-mobile-btn-text" v-on:click="CallModalShow">
-          <a class="map-mobile-btn-text-href" href="tel:+78352355047" >ПОЗВОНИТЬ</a>
+      <div class="map-mobile-btn" v-on:click="CallModalShow">
+        <div class="map-mobile-btn-text" >
+          <a class="map-mobile-btn-text-href" href="tel:+78352355045" >ПОЗВОНИТЬ</a>
         </div>
       </div>
-      <div class="map-mobile-number"> <a class="map-mobile-btn-number-href" href="tel:+78352355047" >8 (8352) 35-53-40 </a></div>
+      <div class="map-mobile-number"> <a class="map-mobile-btn-number-href" href="tel:+78352355045" >8 (8352) 35-50-45 </a></div>
       <div class="map-mobile-btn-questions" v-on:click="CallModalShow">
         <div class="map-mobile-btn-questions-text" >
           ОСТАЛИСЬ ВОПРОСЫ ?
