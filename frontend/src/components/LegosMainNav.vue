@@ -15,7 +15,7 @@
       </div>
       <div class="legos-actions">
         <div class="actions">
-          <a class="action" href="tel:+78352355047" v-on:click="CallModalShow" >Вызывать замерщика</a>
+          <a class="action" href="tel:+78352355045" v-on:click="CallModalShow" >Вызывать замерщика</a>
           <a class="action" v-on:click="CallModalShow">Отзывы</a>
           <a class="action" v-on:click="CallModalShow">Цены</a>
         </div>
@@ -29,7 +29,7 @@
               />
             </div>
             <div class="phone-work">
-              <a class="phone" v-on:click="CallModalShow">8 (8352) 35-50-47</a>
+              <a class="phone" v-on:click="CallModalShow">8 (8352) 35-50-45</a>
               <div class="work-time">до 21:00 без выходных</div>
             </div>
           </div>
